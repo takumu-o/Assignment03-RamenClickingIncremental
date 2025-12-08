@@ -1,13 +1,13 @@
 @font-face {
     font-family: 'chinese';
-    src: url('Assets/fonts/chinese-style.otf') format('opentype');
+    src: url('./Assets/fonts/chinese-style.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'newrodin';
-    src: url('Assets/fonts/newrodin.otf') format('opentype');
+    src: url('./Assets/fonts/newrodin.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
