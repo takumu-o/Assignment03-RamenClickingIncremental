@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramen Clicking Incremental</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+<div id="start-screen" class="start-screen">
+  <div class="start-content">
+    <h1 class="game-title">Ramen Clicking Incremental</h1>
+    <button id="start-btn" class="start-btn">START</button>
+  </div>
+</div>
+
+    <section>
+    <img src="Assets/Sprites/Border.svg" class="top-border">
+        <div class="main">
+            <div class="left">
+                <div class="label">
+                    <img src="Assets/Sprites/Ramen.png" class="ramen" draggable="false">
+                    <h3>Ramen: <span class="click-count">0</span></h3>
+                </div>
+                <img src="Assets/Sprites/Miku - Idle v2.png" class="miku-clicker" onclick="incrementClick()" draggable="false">
+            </div>
+            <div class="right">
+                <div class="upgrade" onclick="buyLeek()">
+                    <div class="left-section">
+                        <img src="Assets/Sprites/Leek.png" class="upgrade-img" draggable="false">
+                    </div>
+                    <div class="mid-section">
+                        <h4>Leek</h4>
+                        <div class="cost-info">
+                            <p>Price: <span class="leek-cost">10</span></p>
+                            <img src="Assets/Sprites/Ramen.png" class="ramen-upgrade-img" draggable="false">
+                        </div>
+                    </div>
+                    <div class="right-section"> Level: <span class="leek-level">0</span></div>
+                    <div class="next-level-info">
+                        <p>
+                            +<span class="leek-increase">1</span> Ramen <br /> per click
+                        </p>
+                    </div>
+                </div>
+
+                <div class="upgrade" onclick="buyTetoBaguette()">
+                    <div class="left-section">
+                        <img src="Assets/Sprites/TetoBaguette.png" class="tetobaguette-upgrade-img" draggable="false">
+                    </div>
+                    <div class="mid-section">
+                        <h4>Teto's Baguette</h4>
+                        <div class="cost-info">
+                            <p>Price: <span class="tetobaguette-cost">100</span></p>
+                            <img src="Assets/Sprites/Ramen.png" class="ramen-upgrade-img" draggable="false">
+                        </div>
+                    </div>
+                    <div class="right-section"> Level: <span class="tetobaguette-level">0</span></div>
+                    <div class="next-level-info">
+                        <p>
+                            +<span class="tetobaguette-increase">3</span> Ramen <br /> per click
+                        </p>
+                    </div>
+                </div>
+
+                <div class="upgrade" onclick="buyTetoBlessing()">
+                    <div class="left-section">
+                        <img src="Assets/Sprites/Teto - Defend v3.png" class="tetoblessing-upgrade-img" draggable="false">
+                    </div>
+                    <div class="mid-section">
+                        <h4>Teto's Blessing</h4>
+                        <div class="cost-info">
+                            <p>Price: <span class="tetoblessing-cost">750</span></p>
+                            <img src="Assets/Sprites/Ramen.png" class="ramen-upgrade-img" draggable="false">
+                        </div>
+                    </div>
+                    <div class="right-section"> Level: <span class="tetoblessing-level">0</span></div>
+                    <div class="next-level-info">
+                        <p>
+                            +<span class="tetoblessing-increase">15</span> Ramen <br /> per second
+                        </p>
+                    </div>
+                </div>
+
+                <div class="upgrade" onclick="buyNeruPhone()">
+                    <div class="left-section">
+                        <img src="Assets/Sprites/Flip Phone.png" class="neruphone-upgrade-img" draggable="false">
+                    </div>
+                    <div class="mid-section">
+                        <h4>Neru's Flip Phone</h4>
+                        <div class="cost-info">
+                            <p>Price: <span class="neruphone-cost">2000</span></p>
+                            <img src="Assets/Sprites/Ramen.png" class="ramen-upgrade-img" draggable="false">
+                        </div>
+                    </div>
+                    <div class="right-section"> Level: <span class="neruphone-level">0</span></div>
+                    <div class="next-level-info">
+                        <p>
+                            +<span class="neruphone-increase">30</span> Ramen <br /> per click
+                        </p>
+                    </div>
+                </div>
+
+                <div class="upgrade" onclick="buyNeruBlessing()">
+                    <div class="left-section">
+                        <img src="Assets/Sprites/Neru - Idle v1.png" class="nerublessing-upgrade-img" draggable="false">
+                    </div>
+                    <div class="mid-section">
+                        <h4>Neru's Blessing</h4>
+                        <div class="cost-info">
+                            <p>Price: <span class="nerublessing-cost">5000</span></p>
+                            <img src="Assets/Sprites/Ramen.png" class="ramen-upgrade-img" draggable="false">
+                        </div>
+                    </div>
+                    <div class="right-section"> Level: <span class="nerublessing-level">0</span></div>
+                    <div class="next-level-info">
+                        <p>
+                            +<span class="nerublessing-increase">50</span> Ramen <br /> per second
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="stats">
+            <h1 class="statistics-title">Stats:</h1>
+            <div class="statistics-text">
+                <div class="rpc-rps-block">
+                    <img src="Assets/Sprites/Ramen.png" class="ramen-rpc-rps">
+                    <p>Ramen per Click: <span id="rpc-text">1</span></p>
+                </div>
+                <div class="rpc-rps-block">
+                    <img src="Assets/Sprites/Ramen.png" class="ramen-rpc-rps">
+                    <p>Ramen per Second: <span id="rps-text">0</span></p>
+                </div>
+            </div>
+        </div>
+    <img src="Assets/Sprites/Border.svg" class="bottom-border">
+    </section>
+
+
+    <button id="credits-btn" class="credits-btn">Credits</button>
+
+    <div id="credits-overlay" class="credits-overlay">
+        <div class="credits-box">
+            <h2>Credits</h2>
+            <p>Sprites/UI Elements: <span class="highlighted">Takumu</span> / <span class="highlighted">Maiko</span> (<span class="highlighted">@GalaxyReinstated</span>)</p>
+            <p>Music: <span class="highlighted">Project Moon</span> - <span class="highlighted">Limbus Company [Canto 8 - Zang Hua Yin]</span></p>
+            <p>SFX: <span class="highlighted">Toby Fox</span> - <span class="highlighted">DELTARUNE</span></p>
+            <p>Visual Style / Original Inspiration: <a class="highlighted" href="https://www.youtube.com/watch?v=3-kI9rDwQ8E" target="_blank">Atena - Odochina</a></p>
+        <p class="credits-close-hint">(click anywhere to close)</p>
+        </div>
+    </div>
+
+    <section>
+        <audio src="Assets/BGM/ZangHuaYin.mp3" loop id="bgm"></audio>
+        <audio src="Assets/SFX/Click.wav"></audio>
+        <audio src="Assets/SFX/Purchase.wave"></audio>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
