@@ -45,6 +45,12 @@ let nerublessingLevel = document.querySelector('.nerublessing-level')
 let nerublessingIncrease = document.querySelector('.nerublessing-increase')
 let parsednerublessingIncrease = parseFloat(nerublessingIncrease.innerHTML)
 
+let goldenleekCost = document.querySelector('.goldenleek-cost')
+let parsedgoldenleekCost = parseFloat(goldenleekCost.innerHTML)
+let goldenleekLevel = document.querySelector('.goldenleek-level')
+let goldenleekIncrease = document.querySelector('.goldenleek-increase')
+let parsedgoldenleekIncrease = parseFloat(goldenleekIncrease.innerHTML)
+
 let rpcText = document.getElementById("rpc-text")
 let rpsText = document.getElementById("rps-text")
 
@@ -198,6 +204,24 @@ function buyNeruBlessing () {
 
     parsednerublessingCost *= 1.15
     nerublessingCost.innerHTML = Math.round(parsednerublessingCost) }
+}
+
+function buyGoldenLeek () {
+    if (parsedClicks >= parsedgoldenleekCost) {
+
+    buySFX.currentTime = 0;
+    buySFX.play();
+
+    clicks.innerHTML = Math.round(parsedClicks -= parsedgoldenleekCost)
+
+    goldenleekLevel.innerHTML ++
+
+    parsedgoldenleekIncrease = parseFloat((parsedgoldenleekIncrease * 1.05).toFixed(2))
+    goldenleekIncrease.innerHTML = parsedgoldenleekIncrease
+    rpc += parsedgoldenleekIncrease
+
+    parsedgoldenleekCost *= 1.15
+    goldenleekCost.innerHTML = Math.round(parsedgoldenleekCost) }
 }
 
 

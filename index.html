@@ -21,7 +21,7 @@
             <div class="left">
                 <div class="label">
                     <img src="Assets/Sprites/Ramen.png" class="ramen" draggable="false">
-                    <h3>Ramen: <span class="click-count">0</span></h3>
+                    <h3>Ramen: <span class="click-count">1500000</span></h3>
                 </div>
                 <img src="Assets/Sprites/Miku - Idle v2.png" class="miku-clicker" onclick="incrementClick()" draggable="false">
             </div>
@@ -140,6 +140,25 @@
                     </div>
                 </div>
 
+                <div class="upgrade" onclick="buyGoldenLeek()">
+                    <div class="left-section">
+                        <img src="Assets/Sprites/Golden Leek.png" class="goldenleek-upgrade-img" draggable="false">
+                    </div>
+                    <div class="mid-section">
+                        <h4>Golden Leek</h4>
+                        <div class="cost-info">
+                            <p>Price: <span class="goldenleek-cost">50000000</span></p>
+                            <img src="Assets/Sprites/Ramen.png" class="ramen-upgrade-img" draggable="false">
+                        </div>
+                    </div>
+                    <div class="right-section"> Level: <span class="goldenleek-level">0</span></div>
+                    <div class="next-level-info">
+                        <p>
+                            +<span class="goldenleek-increase">5000</span> Ramen <br /> per click
+                        </p>
+                    </div>
+                </div>
+
             </div>
         </div>
 
@@ -178,7 +197,8 @@
         <audio src="Assets/SFX/Click.wav"></audio>
         <audio src="Assets/SFX/Purchase.wave"></audio>
     </section>
-
+    
+    <script src="utils/formatter.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
