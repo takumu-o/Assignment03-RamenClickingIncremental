@@ -15,6 +15,12 @@ let leekLevel = document.querySelector('.leek-level')
 let leekIncrease = document.querySelector('.leek-increase')
 let parsedleekIncrease = parseFloat(leekIncrease.innerHTML)
 
+let mikublessingCost = document.querySelector('.mikublessing-cost')
+let parsedmikublessingCost = parseFloat(mikublessingCost.innerHTML)
+let mikublessingLevel = document.querySelector('.mikublessing-level')
+let mikublessingIncrease = document.querySelector('.mikublessing-increase')
+let parsedmikublessingIncrease = parseFloat(mikublessingIncrease.innerHTML)
+
 let tetobaguetteCost = document.querySelector('.tetobaguette-cost')
 let parsedtetobaguetteCost = parseFloat(tetobaguetteCost.innerHTML)
 let tetobaguetteLevel = document.querySelector('.tetobaguette-level')
@@ -102,6 +108,24 @@ function buyLeek () {
 
     parsedleekCost *= 1.15
     leekCost.innerHTML = Math.round(parsedleekCost) }
+}
+
+function buyMikuBlessing () {
+    if (parsedClicks >= parsedmikublessingCost) {
+
+    buySFX.currentTime = 0;
+    buySFX.play();
+
+    clicks.innerHTML = Math.round(parsedClicks -= parsedmikublessingCost)
+
+    mikublessingLevel.innerHTML ++
+
+    parsedmikublessingIncrease = parseFloat((parsedmikublessingIncrease * 1.05).toFixed(2))
+    mikublessingIncrease.innerHTML = parsedmikublessingIncrease
+    rps += parsedmikublessingIncrease
+
+    parsedmikublessingCost *= 1.15
+    mikublessingCost.innerHTML = Math.round(parsedmikublessingCost) }
 }
 
 function buyTetoBaguette () {
